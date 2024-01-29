@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>More Art</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        <style>
+            body
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+            }
+
+            form
+            {
+                max-width: 110vh;
+                width: 100%;
+                padding: 5vh;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Dizi Önerisinde Bulun</h1>
+
+        <a href="{{ url_for('movie') }}"><div class="arrow left">&#9665;</div></a>
+        <a href="{{ url_for('music') }}"><div class="arrow right">&#9655;</div></a>
+
+        <form method="POST">
+            <label for="question1">Hangi kategoriye sahip bir dizi izlemek istiyorsun?</label>
+            <br>
+            <br>
+                <input type="radio" name="question1" value="Aksiyon"> Aksiyon
+                <input type="radio" name="question1" value="Komedi"> Komedi
+                <input type="radio" name="question1" value="Fantezi"> Fantezi
+                <input type="radio" name="question1" value="Korku"> Korku
+                <input type="radio" name="question1" value="Romantik"> Romantik
+                <input type="radio" name="question1" value="Bilim Kurgu"> Bilim Kurgu
+                <input type="radio" name="question1" value="Western"> Western
+                <input type="radio" name="question1" value="Müzikal"> Müzikal
+                <input type="radio" name="question1" value="Türk Filmi"> Türk Filmi
+            <br>
+            <br>
+            <br>
+            <label for="question2">Hangi dönemde vizyona girmiş bir dizi izlemek istiyorsun?</label>
+            <br>
+            <br>
+                <input type="radio" name="question2" value="+2020"> +2020
+                <input type="radio" name="question2" value="2015-2020"> 2015-2020
+                <input type="radio" name="question2" value="2010-2015"> 2010-2015
+                <input type="radio" name="question2" value="2005-2010"> 2005-2010
+                <input type="radio" name="question2" value="2000-2005"> 2000-2005
+                <input type="radio" name="question2" value="1990-2000"> 1990-2000
+                <input type="radio" name="question2" value="1980-1990"> 1980-1990
+                <input type="radio" name="question2" value="1970-1980"> 1970-1980
+            <br>
+            <br>
+            <br>
+            <label for="question3">IMDB puan aralığı senin için ne kadar önemli?</label>
+            <br>
+            <br>
+                <input type="radio" name="question3" value="8"> Çok Önemli
+                <input type="radio" name="question3" value="7"> Önemli
+                <input type="radio" name="question3" value="6"> Farketmez
+                <input type="radio" name="question3" value="5"> Önemsiz
+                <input type="radio" name="question3" value="4"> Umrumda Değil
+            <br>
+            <br>
+            <br>
+            <label for="question4">Dizide hangi ünlü sanatçının rol almasını istersiniz? (Sanatçı isimlerini virgül ile ayırınız.)</label>
+            <br>
+            <br>
+                <input class="textArea" type="text" name="question4">
+            <br>
+            <br>
+            <br>
+            <center><input class="button" type="submit" value="DİZİ ÖNER"></center>
+        </form>
+
+        {% if ai_answer is not none %}
+            <div class="popup" id="myPopup">
+                <p>{{ ai_answer }}</p>
+            </div>
+        {% endif %}
+
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </body>
+</html>

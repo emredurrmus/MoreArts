@@ -1,0 +1,141 @@
+*
+{
+    font-family: 'Comfortaa';
+}
+
+@font-face
+{
+    font-family: 'Comfortaa';
+    src: url('/static/assets/Comfortaa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1
+{
+    color: #ffffff;
+}
+
+form label
+{
+    color: #ffffff;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #4b93ff;
+    overflow: hidden;
+}
+
+.textArea
+{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.button
+{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.button:hover
+{
+    cursor: pointer;
+    background-color: #dadada;
+}
+
+.container
+{
+    display: flex;
+    height: 100vh;
+}
+
+.section
+{
+    flex: 1;
+    overflow: hidden;
+}
+
+.section img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.section:hover img
+{
+    transform: scale(1.1);
+}
+
+@keyframes slide
+{
+    0%
+    {
+        transform:translateX(-25%);
+    }
+    100%
+    {
+        transform:translateX(25%);
+    }
+}
+
+.popup
+{
+    border: none;
+    position: fixed;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.popup p
+{
+    margin: 0;
+}
+
+.close
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.arrow
+{
+    position: fixed;
+    top: 50%;
+    font-size: 5vh;
+    cursor: pointer;
+    color: #ffffff;
+    transition: transform 0.5s ease;
+}
+
+.arrow:hover
+{
+    transform: scale(1.5);
+}
+
+.left
+{
+    left: 5vh;
+}
+
+.right
+{
+    right: 5vh;
+}

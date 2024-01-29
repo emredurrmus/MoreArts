@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>More Art</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        <style>
+            body
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+            }
+
+            form
+            {
+                max-width: 120vh;
+                width: 100%;
+                padding: 5vh;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Müzik Önerisinde Bulun</h1>
+
+        <a href="{{ url_for('tvseries') }}"><div class="arrow left">&#9665;</div></a>
+        <a href="{{ url_for('movie') }}"><div class="arrow right">&#9655;</div></a>
+
+        <form method="POST">
+            <label for="question1">Hangi kategoriye sahip bir müzik dinlemek istiyorsun?</label>
+            <br>
+            <br>
+                <input type="radio" name="question1" value="Klasik"> Klasik
+                <input type="radio" name="question1" value="Pop"> Pop
+                <input type="radio" name="question1" value="Rock"> Rock
+                <input type="radio" name="question1" value="Rap / Hip-Hop"> Rap / Hip-Hop
+                <input type="radio" name="question1" value="Elektronik"> Elektronik
+                <input type="radio" name="question1" value="Country"> Country
+                <input type="radio" name="question1" value="Caz"> Caz
+                <input type="radio" name="question1" value="Reggae"> Reggae
+                <input type="radio" name="question1" value="Metal"> Metal
+                <input type="radio" name="question1" value="Blues"> Blues
+                <input type="radio" name="question1" value="Latin"> Latin
+                <input type="radio" name="question1" value="Phonk"> Phonk
+            <br>
+            <br>
+            <br>
+            <label for="question2">Yerli mi? Yabancı mı?</label>
+            <br>
+            <br>
+                <input type="radio" name="question2" value="Yerli"> Yerli
+                <input type="radio" name="question2" value="Yabancı"> Yabancı
+            <br>
+            <br>
+            <br>
+            <label for="question3">Dönemi ne olsun?</label>
+            <br>
+            <br>
+                <input type="radio" name="question3" value="Milenyum Sonrası"> Milenyum Sonrası
+                <input type="radio" name="question3" value="90'lar"> 90'lar
+                <input type="radio" name="question3" value="80'ler"> 80'ler
+                <input type="radio" name="question3" value="70'ler"> 70'ler
+                <input type="radio" name="question3" value="60'lar"> 60'lar
+                <input type="radio" name="question3" value="Herhangi bir müzik"> Dönem Farketmez
+            <br>
+            <br>
+            <br>
+            <label for="question4">Ruh halin nasıl?</label>
+            <br>
+            <br>
+                <input type="radio" name="question4" value="Mutlu"> Mutlu
+                <input type="radio" name="question4" value="Üzgün"> Üzgün
+                <input type="radio" name="question4" value="Öfkeli"> Öfkeli
+                <input type="radio" name="question4" value="Şaşkın"> Şaşkın
+            <br>
+            <br>
+            <br>
+            <center><input class="button" type="submit" value="MÜZİK ÖNER"></center>
+        </form>
+
+        {% if ai_answer is not none %}
+            <div class="popup" id="myPopup">
+                <p>{{ ai_answer }}</p>
+            </div>
+        {% endif %}
+
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>More Art</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="section">
+                <a href="{{ url_for('movie') }}">
+                    <img src="{{ url_for('static', filename='images/movie.jpg') }}">
+                </a>
+            </div>
+
+            <div class="section">
+                <a href="{{ url_for('tvseries') }}">
+                    <img src="{{ url_for('static', filename='images/series.jpg') }}">
+                </a>
+            </div>
+
+            <div class="section">
+                <a href="{{ url_for('music') }}">
+                    <img src="{{ url_for('static', filename='images/music.jpg') }}">
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
